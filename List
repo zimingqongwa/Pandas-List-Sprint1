@@ -1,0 +1,16 @@
+#List of stock
+
+from pandas import DataFrame
+
+products = {'Products': ['Chips','Cooldrinks','Chocolates','Pies','Fruit','Cupcakes','Veggies'],
+ 'Names':['Simba,Lays','coke,fanta','cadbury,tex','peppersteak,chicken','pear,apple,orange','vanilla,cholate','spinach,cabbege''] }
+
+df = DataFrame(products, columns= ['Products', 'Names']) 
+
+products_list = [df.columns.values.tolist()] + df.values.tolist() 
+
+f = '{:<8}|{:<15}' 
+
+for i in products_list: 
+
+    print(f.format(*i))
